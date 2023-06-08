@@ -71,3 +71,8 @@
     margin-bottom: 10px;
   }
 }
+@media (min-width: 768px) and (max-width: 1100px) {
+  .cardContainer {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}

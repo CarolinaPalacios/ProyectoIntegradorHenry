@@ -49,7 +49,7 @@ const Card = ({
         </button>
       </div>
       <img src={image} alt="" className={style.imagen} />
-      <Link to={`/detail/${id}`}>
+      <Link to={`/detail/${id}`} className={style.link}>
         <h2 className={style.nombre}>{name}</h2>
       </Link>
       <h2 className={style.especie}>{species}</h2>
