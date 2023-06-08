@@ -1,0 +1,87 @@
+.container {
+  background-color: rgb(95, 158, 160, 0.9);
+  width: 190px;
+  height: 320px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px rgb(29, 28, 28);
+  text-shadow: 6px 4px 7px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+}
+
+.botonCard {
+  background-color: rgb(201, 52, 52);
+  border: none;
+  font-family: "Get Schwifty";
+  color: wheat;
+  border-radius: 80%;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  margin-right: auto;
+}
+
+.botonCard:hover {
+  background-color: brown;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px rgb(29, 28, 28);
+  transition: 0.5s;
+}
+@font-face {
+  font-family: "Get Schwifty";
+  src: url(../../assets/get_schwifty.ttf);
+}
+
+.nombre {
+  font-family: "Get Schwifty";
+  color: rgb(0, 0, 0);
+  font-size: 17px;
+  margin: 10px;
+  font-weight: 600;
+}
+
+.especie {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 200;
+  margin: 1px;
+  height: fit-content;
+  color: rgb(166, 255, 0);
+}
+
+.genero {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 15px;
+  margin: 1px;
+  font-weight: 200;
+  color: rgb(166, 255, 0);
+}
+
+.imagen {
+  border-radius: 100px;
+  height: 200px;
+  position: relative;
+  bottom: 5px;
+}
+
+.containerFav {
+  background-color: rgb(201, 52, 52);
+  border: none;
+  font-family: "Get Schwifty";
+  color: wheat;
+  border-radius: 80%;
+  width: 30px;
+  height: 30px;
+}
+.containerFav:hover {
+  background-color: brown;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px rgb(29, 28, 28);
+  transition: 0.5s;
+}
+
+.buttonContainer {
+  display: flex;
+}
