@@ -13,19 +13,20 @@ const reducer = (state = initialState, { type, payload }) => {
         myFavorites: [...state.myFavorites, payload],
         allCharacters: [...state.allCharacters, payload],
       };
-
     case FILTER:
-      const filteredCharacters = state.allCharacters.filter(
-        (character) => character.gender === payload
-      );
+      const filteredCharacters = payload
+        ? state.allCharacters.filter(
+            (character) => character.gender === payload
+          )
+        : state.allCharacters;
       return {
         ...state,
         myFavorites: filteredCharacters,
       };
 
     case ORDER:
-      const orderedCharacters = [...state.allCharacters];
-      orderedCharacters.sort((a, b) => {
+      const orderedFavorites = [...state.myFavorites];
+      orderedFavorites.sort((a, b) => {
         if (payload === "A") {
           return a.id - b.id;
         } else if (payload === "D") {
@@ -35,7 +36,7 @@ const reducer = (state = initialState, { type, payload }) => {
       });
       return {
         ...state,
-        myFavorites: orderedCharacters,
+        myFavorites: orderedFavorites,
       };
 
     case REMOVE_FAV:

@@ -34,7 +34,7 @@ const Card = ({
       removeFav(id);
     } else {
       setIsFav(true);
-      addFav({ id, name, status, species, gender, origin, image, onClose });
+      addFav({ id, name, status, species, gender, origin, image });
     }
   };
 

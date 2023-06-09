@@ -1,17 +1,13 @@
 import { connect, useDispatch } from "react-redux";
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import { removeFav, filterCards, orderCards } from "../../redux/actions";
 import Card from "../Card/Card";
 import style from "./Favorite.module.css";
 
 const Favorites = ({ myFavorites, removeFav }) => {
-  const handleClose = useCallback(
-    (id) => {
-      removeFav(id);
-    },
-    [removeFav]
-  );
-
+  const handleClose = (id) => {
+    removeFav(id);
+  };
   const [aux, setAux] = useState(false);
 
   const dispatch = useDispatch();
@@ -29,10 +25,17 @@ const Favorites = ({ myFavorites, removeFav }) => {
     <div>
       <div className={style.container}>
         <select onChange={handleOrder} className={style.order}>
+          <option disabled selected value="">
+            Order
+          </option>
           <option value="A">Ascending</option>
           <option value="D">Descending</option>
         </select>
         <select onChange={handleFilter} className={style.filter}>
+          <option disabled selected value="">
+            Filter
+          </option>
+          <option value="">All</option>
           <option value="Male">Male</option>
           <option value="Female">Female</option>
           <option value="Genderless">Genderless</option>
