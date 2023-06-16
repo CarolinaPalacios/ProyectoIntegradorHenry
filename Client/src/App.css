@@ -1,0 +1,7 @@
+.App {
+  text-align: center;
+}
+@font-face {
+  font-family: "Get Schwifty";
+  src: url(./assets/get_schwifty.ttf);
+}

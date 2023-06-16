@@ -1,0 +1,90 @@
+.form {
+  background-color: rgba(95, 158, 160, 0.678);
+  width: 250px;
+  height: 380px;
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px rgb(29, 28, 28);
+  text-shadow: 6px 4px 7px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 60px;
+  align-items: center;
+}
+
+.image {
+  height: 250px;
+  border-radius: 50%;
+  width: 200px;
+  margin-bottom: 10px;
+  position: relative;
+  top: -10px;
+}
+
+.inputEmail {
+  width: 100%;
+}
+
+.inputPassword {
+  width: 100%;
+}
+
+.buttonForm {
+  border-radius: 10px;
+  width: 50%;
+  height: 35px;
+  font-weight: bold;
+  background-color: rgb(138, 230, 1);
+  cursor: pointer;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.buttonForm:hover {
+  background-color: rgb(117, 194, 2);
+  box-shadow: 2px 2px 2px rgb(29, 28, 28);
+}
+
+.labelEmail {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-align: left;
+  margin-right: auto;
+}
+
+.labelPassword {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-align: left;
+  margin-right: auto;
+}
+
+.errorEmail {
+  color: red;
+  margin: 1px;
+  font-size: 14px;
+  font-weight: bold;
+  text-shadow: 5px 4px 7px rgb(0, 0, 0);
+}
+
+.errorPassword {
+  color: rgb(255, 0, 0);
+  text-shadow: 5px 4px 7px rgb(0, 0, 0);
+  margin: 1px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.errorEmailContainer {
+  height: 20px;
+  margin: 1px;
+}
+
+.errorPasswordContainer {
+  height: 20px;
+  margin: 1px;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
