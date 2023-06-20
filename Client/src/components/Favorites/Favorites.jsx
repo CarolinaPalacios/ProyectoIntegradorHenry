@@ -24,15 +24,15 @@ const Favorites = ({ myFavorites, removeFav }) => {
   return (
     <div>
       <div className={style.container}>
-        <select onChange={handleOrder} className={style.order}>
-          <option disabled selected value="">
+        <select onChange={handleOrder} className={style.order} value="">
+          <option disabled value="">
             Order
           </option>
           <option value="A">Ascending</option>
           <option value="D">Descending</option>
         </select>
-        <select onChange={handleFilter} className={style.filter}>
-          <option disabled selected value="">
+        <select onChange={handleFilter} className={style.filter} value="">
+          <option disabled value="">
             Filter
           </option>
           <option value="">All</option>

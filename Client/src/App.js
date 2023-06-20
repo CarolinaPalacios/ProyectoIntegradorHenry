@@ -9,8 +9,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 
-const email = "caaro.palacios@hotmail.com";
-const password = "caro1234";
+const URL = "http://localhost:3001/rickandmorty/login";
 
 function App() {
   const location = useLocation();
@@ -18,10 +17,17 @@ function App() {
   const [characters, setCharacters] = useState([]);
   const [access, setAccess] = useState(false);
 
-  const login = (userData) => {
-    if (userData.email === email && userData.password === password) {
-      setAccess(true);
-      navigate("/home");
+  const login = async (userData) => {
+    try {
+      const { email, password } = userData;
+      const { data } = await axios(
+        URL + `?email=${email}&password=${password}`
+      );
+      const { access } = data;
+      setAccess(data);
+      access && navigate("/home");
+    } catch (error) {
+      console.log(error.message);
     }
   };
 
@@ -34,26 +40,28 @@ function App() {
     !access && navigate("/");
   }, [access]);
 
-  const onSearch = (id) => {
-    if (characters.some((character) => character.id === Number(id))) {
-      window.alert("¡Este personaje ya ha sido agregado!");
-      return;
-    }
-    axios(`http://localhost:3001/rickandmorty/character/${id}`).then(
-      ({ data }) => {
-        if (data.name) {
-          setCharacters((oldChars) => [...oldChars, data]);
-        } else {
-          alert("¡No hay personajes con este ID!");
-        }
+  const onSearch = async (id) => {
+    try {
+      if (characters.some((character) => character.id === Number(id))) {
+        throw Error("¡Este personaje ya ha sido agregado!");
       }
-    );
+      const { data } = await axios(
+        `http://localhost:3001/rickandmorty/character/${id}`
+      );
+      if (!data.name) {
+        throw Error("¡No hay personajes con este ID!");
+      }
+      setCharacters((oldChars) => [...oldChars, data]);
+    } catch (error) {
+      if (error.message === "¡Este personaje ya ha sido agregado!")
+        alert(error.message);
+      if (error.message === "¡No hay personajes con este ID!")
+        alert(error.message);
+    }
   };
 
   const onClose = (id) => {
-    const filtered = characters.filter(
-      (characters) => characters.id !== Number(id)
-    );
+    const filtered = characters.filter((characters) => characters.id !== id);
     setCharacters(filtered);
   };
 
