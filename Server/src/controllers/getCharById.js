@@ -41,7 +41,7 @@ const getCharById = async (req, res) => {
       id: data.id,
       name: data.name,
       species: data.species,
-      origin: data.origin.name,
+      origin: data.origin,
       status: data.status,
       image: data.image,
       gender: data.gender,

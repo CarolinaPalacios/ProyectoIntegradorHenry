@@ -6,7 +6,9 @@ import style from "./Nav.module.css";
 const Nav = ({ onSearch, random, logout }) => {
   return (
     <nav className={style.navBar}>
-      <h1 className={style.title}>RICK AND MORTY</h1>
+      <NavLink to="/home" className={style.titleLink}>
+        <h1 className={style.title}>RICK AND MORTY</h1>
+      </NavLink>
       <button className={style.homeButton}>
         <NavLink to="/home" className={style.navToHome}>
           Home

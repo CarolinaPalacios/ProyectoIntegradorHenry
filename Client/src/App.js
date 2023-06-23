@@ -43,20 +43,20 @@ function App() {
   const onSearch = async (id) => {
     try {
       if (characters.some((character) => character.id === Number(id))) {
-        throw Error("¡Este personaje ya ha sido agregado!");
+        throw new Error("¡Este personaje ya ha sido agregado!");
       }
       const { data } = await axios(
         `http://localhost:3001/rickandmorty/character/${id}`
       );
-      if (!data.name) {
-        throw Error("¡No hay personajes con este ID!");
-      }
+
+      // if (!data.name) {
+      //   throw new Error("¡No hay personajes con este ID!");
+      // }
       setCharacters((oldChars) => [...oldChars, data]);
     } catch (error) {
       if (error.message === "¡Este personaje ya ha sido agregado!")
         alert(error.message);
-      if (error.message === "¡No hay personajes con este ID!")
-        alert(error.message);
+      else alert("¡No hay personajes con este ID!");
     }
   };
 

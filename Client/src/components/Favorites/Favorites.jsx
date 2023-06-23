@@ -55,6 +55,7 @@ const Favorites = ({ myFavorites, removeFav }) => {
               origin={fav.origin}
               image={fav.image}
               onClose={handleClose}
+              showCloseButton={false}
             />
           );
         })}

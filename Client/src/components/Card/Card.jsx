@@ -16,6 +16,7 @@ const Card = ({
   addFav,
   removeFav,
   myFavorites,
+  showCloseButton = true, // Nueva prop para controlar la visibilidad del botón "X"
 }) => {
   const [isFav, setIsFav] = useState(false);
 
@@ -41,9 +42,11 @@ const Card = ({
   return (
     <div className={style.container}>
       <div className={style.buttonContainer}>
-        <button onClick={() => onClose(id)} className={style.botonCard}>
-          X
-        </button>
+        {showCloseButton && ( // Condición para mostrar el botón "X" si showCloseButton es true
+          <button onClick={() => onClose(id)} className={style.botonCard}>
+            X
+          </button>
+        )}
         <button className={style.containerFav} onClick={handleFavorite}>
           {isFav ? "❤️" : "🤍"}
         </button>

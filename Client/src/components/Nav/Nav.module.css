@@ -112,6 +112,10 @@
   vertical-align: middle;
 }
 
+.titleLink {
+  text-decoration: none;
+}
+
 @media (max-width: 767px) {
   .navBar {
     /* Modificaciones específicas para dispositivos pequeños */
