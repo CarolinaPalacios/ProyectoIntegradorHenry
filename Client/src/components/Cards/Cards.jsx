@@ -9,10 +9,13 @@ export default function Cards({ characters, onClose }) {
           return (
             <Card
               key={id}
+              userId={1} //Como todavia esta en desarrollo y no tenemos autenticación le pasamos un valor estático
               id={id}
+              status={status}
               name={name}
               species={species}
               gender={gender}
+              origin={origin}
               image={image}
               onClose={onClose}
             />
